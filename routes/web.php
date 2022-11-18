@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FoodController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FoodController::class, 'listFood']);
 
-Auth::routes();
+Route::get('/foods/{id}', [FoodController::class, 'view'])->name('food.view');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes(['register' => false]);
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::resource('/category', CategoryController::class)->middleware('auth');
+
+Route::resource('food', FoodController::class)->middleware('auth');
