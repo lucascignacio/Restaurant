@@ -10,6 +10,8 @@
 Como rodar o projeto:
 
 php artisan serve
+
+
 npm run dev
 
 tem que manter os dois conectados para que a integracão do sistema seja feita.
