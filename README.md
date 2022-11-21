@@ -7,6 +7,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+Aplicativo para Restaurante focado na exibicão e de produtos com imagens e descricão
+
 Como rodar o projeto:
 
 php artisan serve
